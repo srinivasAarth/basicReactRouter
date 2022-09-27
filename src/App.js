@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { Routes, Route } from "react-router";
+import Contact from "./Components/Contact";
+import Rules from "./Components/Rules";
+import { useNavigate } from "react-router";
+import Users from "./Components/Users";
+import Details from "./Components/Details";
 function App() {
+  const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>hello don</div>
+      <button onClick={() => navigate("Rules")}>Rules</button>
+      <button onClick={() => navigate("Users")}>Users</button>
+      <button onClick={() => navigate("Details")}>Details</button>
+      <Routes>
+        <Route path="/" element={<Contact />} />
+        <Route path="Rules/*" element={<Rules />} />
+        <Route path="Users/*" element={<Users />} />
+        <Route path="Details/*" element={<Details />} />
+      </Routes>
+    </>
   );
 }
 
