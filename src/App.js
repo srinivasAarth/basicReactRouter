@@ -13,11 +13,13 @@ function App() {
       <button onClick={() => navigate("Rules")}>Rules</button>
       <button onClick={() => navigate("Users")}>Users</button>
       <button onClick={() => navigate("Details")}>Details</button>
+      <button onClick={() => navigate("Contacts")}>Contacts</button>
       <Routes>
         <Route path="/" element={<Contact />} />
         <Route path="Rules/*" element={<Rules />} />
         <Route path="Users/*" element={<Users />} />
         <Route path="Details/*" element={<Details />} />
+        <Route path="Contacts/*" element={<Contact />} />
       </Routes>
     </>
   );

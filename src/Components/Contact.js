@@ -1,7 +1,26 @@
 import React from "react";
+import { Route, Routes, useNavigate } from "react-router";
+import ContactsOne from "./Contacts/ContactsOne";
+import ContactsThree from "./Contacts/ContactsThree";
+import ContactsTwo from "./Contacts/ContactsTwo";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  const navigate = useNavigate();
+  return (
+    <>
+      <div>this is Contacts page</div>
+      <button onClick={() => navigate("ContactsOne")}>ContactsOne</button>
+      <button onClick={() => navigate("ContactsTwo")}>ContactsTwo</button>
+      <button onClick={() => navigate("ContactsThree")}>ContactsThree</button>
+
+      <Routes>
+        <Route path="/" element={<ContactsOne />} />
+        <Route path="/ContactsOne" element={<ContactsOne />} />
+        <Route path="/ContactsTwo" element={<ContactsTwo />} />
+        <Route path="/ContactsThree" element={<ContactsThree />} />
+      </Routes>
+    </>
+  );
 };
 
 export default Contact;
