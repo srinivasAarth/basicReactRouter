@@ -12,12 +12,14 @@ const Contact = () => {
       <button onClick={() => navigate("ContactsOne")}>ContactsOne</button>
       <button onClick={() => navigate("ContactsTwo")}>ContactsTwo</button>
       <button onClick={() => navigate("ContactsThree")}>ContactsThree</button>
+      <button onClick={() => navigate("ContactsLast")}>ContactsThree</button>
 
       <Routes>
         <Route path="/" element={<ContactsOne />} />
         <Route path="/ContactsOne" element={<ContactsOne />} />
         <Route path="/ContactsTwo" element={<ContactsTwo />} />
         <Route path="/ContactsThree" element={<ContactsThree />} />
+        <Route path="/ContactsLast" element={<ContactsTwo />} />
       </Routes>
     </>
   );
